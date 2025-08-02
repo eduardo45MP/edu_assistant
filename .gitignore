@@ -1,3 +1,35 @@
+# Personal data and settings
+config.json
+memory/
+data/
+*.sqlite
+*.db
+
+# Cache Whisper and TTS
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# virtual environment
+venv/
+.env
+
+# audio files created
+*.mp3
+*.wav
+
+# Logs and temporary files
+*.log
+*.bak
+*.swp
+*.tmp
+
+# IDEs and editors
+.vscode/
+.idea/
+*.code-workspace
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -1,0 +1,6 @@
+{
+  "use_whisper_api": true,
+  "timezone": "America/Sao_Paulo",
+  "calendar_file": "memory/calendar.json",
+  "use_faiss": false
+}
