@@ -7,7 +7,7 @@ O projeto prioriza aprendizado, validação e utilidade prática, evitando ambi�
 
 ---
 
-## Fase 1 — Fundações (núcleo útil)
+## Fase 1 - Fundações (núcleo útil)
 
 **Objetivo:** estabelecer um núcleo funcional que já gere valor real.
 
@@ -33,7 +33,7 @@ Exemplos:
 
 ---
 
-## Fase 2 — Contexto e continuidade
+## Fase 2 - Contexto e continuidade
 
 **Objetivo:** evoluir de comandos isolados para assistência contextual.
 
@@ -58,7 +58,7 @@ Exemplos:
 
 ---
 
-## Fase 3 — Expansão de ferramentas e automação
+## Fase 3 - Expansão de ferramentas e automação
 
 **Objetivo:** aumentar a utilidade prática por meio de ações mais amplas.
 
@@ -83,7 +83,7 @@ Exemplos:
 
 ---
 
-## Fase 4 — Interação multimodal e wearables
+## Fase 4 - Interação multimodal e wearables
 
 **Objetivo:** reduzir fricção e aumentar disponibilidade.
 
@@ -102,7 +102,7 @@ Resultados esperados:
 
 ---
 
-## Fase 5 — Especialização e orquestração de agentes
+## Fase 5 - Especialização e orquestração de agentes
 
 **Objetivo:** evoluir de um único assistente para um sistema coordenado.
 
@@ -121,7 +121,7 @@ Resultados esperados:
 
 ---
 
-## Fase 6 — Exploração de longo prazo
+## Fase 6 - Exploração de longo prazo
 
 **Objetivo:** explorar conceitos avançados de simbiose de forma responsável.
 

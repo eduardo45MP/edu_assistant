@@ -43,7 +43,7 @@ Within this vision, the assistant assumes a distinct identity: **Assis**.
 
 The name evokes both “assistant” and a human surname, reinforcing the idea of proximity, continuity, and personalization.
 
-Assis is activated through explicit signals — such as a wearable interaction or a specific command — initiating a contextual and continuous interaction flow.
+Assis is activated through explicit signals - such as a wearable interaction or a specific command - initiating a contextual and continuous interaction flow.
 
 ---
 

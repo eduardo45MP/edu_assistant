@@ -1,9 +1,9 @@
 # Personal data and settings
 config.json
-memory/
 data/
 *.sqlite
 *.db
+.temp.*
 
 # Cache Whisper and TTS
 __pycache__/

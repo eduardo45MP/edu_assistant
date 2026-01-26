@@ -43,7 +43,7 @@ Dentro dessa visão, o assistente assume uma identidade própria: **Assis**.
 
 O nome remete tanto a “assistente” quanto a um sobrenome humano, reforçando proximidade, continuidade e personalização.
 
-Assis é ativado por sinais explícitos — como a interação com um wearable ou um comando específico — iniciando um fluxo de interação contínuo e contextual.
+Assis é ativado por sinais explícitos - como a interação com um wearable ou um comando específico - iniciando um fluxo de interação contínuo e contextual.
 
 ---
 

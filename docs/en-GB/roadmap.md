@@ -7,7 +7,7 @@ The project prioritizes learning, validation, and real-world usefulness over spe
 
 ---
 
-## Phase 1 — Foundations (useful core)
+## Phase 1 - Foundations (useful core)
 
 **Objective:** establish a working core that already provides practical value.
 
@@ -33,7 +33,7 @@ Examples:
 
 ---
 
-## Phase 2 — Context and continuity
+## Phase 2 - Context and continuity
 
 **Objective:** move beyond isolated commands toward contextual assistance.
 
@@ -58,7 +58,7 @@ Examples:
 
 ---
 
-## Phase 3 — Tool expansion and automation
+## Phase 3 - Tool expansion and automation
 
 **Objective:** increase usefulness by expanding the assistant’s action surface.
 
@@ -83,7 +83,7 @@ Examples:
 
 ---
 
-## Phase 4 — Multimodal and wearable interaction
+## Phase 4 - Multimodal and wearable interaction
 
 **Objective:** reduce friction and improve availability.
 
@@ -102,7 +102,7 @@ Expected outcomes:
 
 ---
 
-## Phase 5 — Agent specialization and orchestration
+## Phase 5 - Agent specialization and orchestration
 
 **Objective:** evolve from a single assistant into a coordinated system.
 
@@ -121,7 +121,7 @@ Expected outcomes:
 
 ---
 
-## Phase 6 — Long-term exploration
+## Phase 6 - Long-term exploration
 
 **Objective:** explore advanced symbiosis concepts responsibly.
 
