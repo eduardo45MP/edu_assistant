@@ -1,3 +1,22 @@
+#
+# Project: edu_assistant
+# Component: speech-stt Docker image
+# Responsibility:
+#   Package the speech-to-text service runtime for container execution.
+#
+# Architectural Notes:
+#   - Provides transcription only; it does not interpret intent or execute actions.
+#   - Supports the interface layer by normalizing audio into text.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Do not bake secrets or environment-specific policies.
+#   - Keep the image minimal and reproducible.
+#
 FROM python:3.11-slim
 
 WORKDIR /app

@@ -25,6 +25,7 @@ venv/
 *.swp
 *.tmp
 tree.txt
+diff.patch
 
 # IDEs and editors
 .vscode/

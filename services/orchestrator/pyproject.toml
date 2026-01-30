@@ -1,3 +1,21 @@
+# Project: edu_assistant
+# Component: orchestrator package manifest
+# Responsibility:
+#   Declare dependencies and packaging metadata for the orchestrator service.
+#
+# Architectural Notes:
+#   - Supports the orchestration layer; does not define orchestration logic.
+#   - Keeps dependencies explicit and auditable per service.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Do not encode runtime policy decisions here.
+#   - Keep dependencies minimal and service-scoped.
+
 [project]
 name = "orchestrator"
 version = "0.1.0"

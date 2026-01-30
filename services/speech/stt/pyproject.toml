@@ -1,3 +1,21 @@
+# Project: edu_assistant
+# Component: speech-stt package manifest
+# Responsibility:
+#   Declare dependencies and packaging metadata for the speech STT service.
+#
+# Architectural Notes:
+#   - Supports transcription only; no intent or execution logic.
+#   - Keeps dependencies explicit and auditable per service.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Do not encode runtime policy decisions here.
+#   - Keep dependencies minimal and service-scoped.
+
 [project]
 name = "speech-stt"
 version = "0.1.0"

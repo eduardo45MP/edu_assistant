@@ -1,0 +1,17 @@
+# Project: edu_assistant
+# Component: tool-messaging package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the messaging tool.
+#
+# Architectural Notes:
+#   - Tool services execute explicit actions delegated by the orchestrator.
+#   - This file does not define messaging logic or delivery policies.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Do not encode permission decisions here.

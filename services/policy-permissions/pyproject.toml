@@ -1,0 +1,16 @@
+# Project: edu_assistant
+# Component: policy-permissions package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the policy service.
+#
+# Architectural Notes:
+#   - Centralizes approval gates and permission rules.
+#   - This file does not define policy logic or risk models.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Avoid encoding policy decisions here.

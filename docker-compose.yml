@@ -1,3 +1,21 @@
+#
+# Project: edu_assistant
+# Component: local compose stack
+# Responsibility:
+#   Wire core services for local development and manual testing.
+#
+# Architectural Notes:
+#   - Defines service composition only; does not encode business logic.
+#   - Keeps orchestration, execution, and interface layers separated.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#
+# Important Constraints:
+#   - Not a production deployment manifest.
+#   - Avoid embedding secrets or runtime policy decisions here.
+#
 services:
   interface-client:
     build: ./services/interface-client

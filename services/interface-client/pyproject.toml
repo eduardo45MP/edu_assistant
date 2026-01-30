@@ -1,3 +1,21 @@
+# Project: edu_assistant
+# Component: interface-client package manifest
+# Responsibility:
+#   Declare dependencies and packaging metadata for the interface service.
+#
+# Architectural Notes:
+#   - Supports the interface layer; does not define orchestration or execution.
+#   - Keeps dependencies explicit and auditable per service.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Do not encode runtime policy decisions here.
+#   - Keep dependencies minimal and service-scoped.
+
 [project]
 name = "interface-client"
 version = "0.1.0"

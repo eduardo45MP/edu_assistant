@@ -1,0 +1,17 @@
+# Project: edu_assistant
+# Component: tool-calendar package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the calendar tool.
+#
+# Architectural Notes:
+#   - Tool services execute explicit actions delegated by the orchestrator.
+#   - This file does not define calendar logic or integration rules.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Do not encode permission decisions here.

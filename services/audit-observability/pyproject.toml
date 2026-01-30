@@ -1,0 +1,16 @@
+# Project: edu_assistant
+# Component: audit-observability package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the audit service.
+#
+# Architectural Notes:
+#   - Provides observability and traceability across services.
+#   - This file does not define logging or tracing logic.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Avoid encoding runtime configuration here.

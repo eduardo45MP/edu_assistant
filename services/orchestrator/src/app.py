@@ -1,3 +1,23 @@
+"""
+Project: edu_assistant
+Component: orchestrator service (LLM core)
+Responsibility:
+  Interpret user intent and return structured interpretation artifacts.
+
+Architectural Notes:
+  - Centralizes reasoning and planning; does not execute actions directly.
+  - Delegates execution to tools/connectors and relies on policy gates.
+
+Related Documentation:
+  - docs/*/architecture.md
+  - docs/*/vision.md
+  - AGENTS.md
+
+Important Constraints:
+  - No direct side effects or external system calls here.
+  - Preserve separation between intention, orchestration, and execution.
+"""
+
 from __future__ import annotations
 
 from fastapi import FastAPI
@@ -12,15 +32,17 @@ class InterpretIn(BaseModel):
 
 @app.get("/health")
 def health():
+    # Liveness probe only; no orchestration logic should live here.
     return {"ok": True}
 
 
 @app.post("/v1/interpret")
 def interpret(payload: InterpretIn):
+    # Public orchestration boundary: interpret input, do not execute actions.
     text = payload.text.strip()
 
-    # MVP response (no LLM yet)
-    # Later: planner + tool_selection + trace
+    # MVP response (no LLM yet). Future: planner + tool selection + trace.
+    # This must remain side-effect free; execution belongs to tools/connectors.
     return {
         "intent": {
             "type": "user_message",

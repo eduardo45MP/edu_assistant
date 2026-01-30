@@ -1,0 +1,17 @@
+# Project: edu_assistant
+# Component: speech-tts package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the speech TTS service.
+#
+# Architectural Notes:
+#   - Provides text-to-speech output; no intent interpretation.
+#   - This file does not define voice synthesis logic.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Do not encode provider credentials here.

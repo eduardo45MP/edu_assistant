@@ -1,0 +1,16 @@
+# Project: edu_assistant
+# Component: memory package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the memory service.
+#
+# Architectural Notes:
+#   - Memory stores context with explicit user consent.
+#   - This file does not define storage logic or retention policy.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Avoid encoding persistence policy here.

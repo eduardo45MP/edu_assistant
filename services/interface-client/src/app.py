@@ -1,12 +1,32 @@
+#arquivo ./services/interface-client/src/app.py
+"""
+Project: edu_assistant
+Component: interface-client service
+Responsibility:
+  Capture user input (text/audio), normalize it, and delegate to core services.
+
+Architectural Notes:
+  - Interface layer does not execute actions or interpret intent.
+  - Delegates transcription to speech services and intent to orchestrator.
+
+Related Documentation:
+  - docs/*/architecture.md
+  - docs/*/vision.md
+  - AGENTS.md
+
+Important Constraints:
+  - Keep decisions and execution out of this service.
+  - All side effects must be delegated and auditable upstream.
+"""
+
 from __future__ import annotations
 
 import os
 from typing import Optional
 
-import httpx
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
-
+import httpx
 
 STT_URL = os.getenv("STT_URL", "http://speech-stt:8001")
 ORCH_URL = os.getenv("ORCHESTRATOR_URL", "http://orchestrator:8002")
@@ -20,47 +40,54 @@ class TextInput(BaseModel):
 
 @app.get("/health")
 def health():
+    # Liveness probe only; no user-facing logic here.
     return {"ok": True}
 
-
-@app.post("/v1/input")
-async def input_endpoint(payload: Optional[TextInput] = None, audio: UploadFile | None = File(default=None)):
-    """
-    Accepts either:
-      - JSON body: {"text": "..."}
-      - multipart/form-data: audio=@file.wav (or mp3/m4a)
-    """
-    transcript: Optional[str] = None
+@app.post("/v1/input/text")
+async def input_text(payload: TextInput):
+    if not payload.text.strip():
+        raise HTTPException(status_code=400, detail="Text cannot be empty")
 
     async with httpx.AsyncClient(timeout=30) as client:
-        if audio is not None:
-            # Transcribe audio
-            files = {"audio": (audio.filename, await audio.read(), audio.content_type or "application/octet-stream")}
-            try:
-                r = await client.post(f"{STT_URL}/v1/transcribe", files=files)
-                r.raise_for_status()
-            except Exception as e:
-                raise HTTPException(status_code=502, detail=f"STT failed: {e}")
+        r = await client.post(
+            f"{ORCH_URL}/v1/interpret",
+            json={"text": payload.text.strip()},
+        )
+        r.raise_for_status()
 
-            transcript = r.json().get("text")
-            if not transcript:
-                raise HTTPException(status_code=502, detail="STT returned empty transcript")
+    return {
+        "input": {"text": payload.text},
+        "orchestrator": r.json(),
+    }
 
-            text = transcript
-        else:
-            if payload is None or not payload.text.strip():
-                raise HTTPException(status_code=400, detail="Provide JSON {'text': '...'} or multipart audio")
-            text = payload.text.strip()
+@app.post("/v1/input/audio")
+async def input_audio(audio: UploadFile = File(...)):
+    async with httpx.AsyncClient(timeout=30) as client:
+        r = await client.post(
+            f"{STT_URL}/v1/transcribe",
+            files={
+                "audio": (
+                    audio.filename,
+                    await audio.read(),
+                    audio.content_type or "application/octet-stream",
+                )
+            },
+        )
+        r.raise_for_status()
 
-        # Send to orchestrator
-        try:
-            r2 = await client.post(f"{ORCH_URL}/v1/interpret", json={"text": text})
-            r2.raise_for_status()
-        except Exception as e:
-            raise HTTPException(status_code=502, detail=f"Orchestrator failed: {e}")
+        text = r.json().get("text")
 
-        return {
-            "input": {"text": payload.text if payload else None, "audio": audio.filename if audio else None},
-            "transcript": transcript,
-            "orchestrator": r2.json(),
-        }
+        if not text:
+            raise HTTPException(status_code=502, detail="STT returned empty transcript")
+
+        r2 = await client.post(
+            f"{ORCH_URL}/v1/interpret",
+            json={"text": text},
+        )
+        r2.raise_for_status()
+
+    return {
+        "input": {"audio": audio.filename},
+        "transcript": text,
+        "orchestrator": r2.json(),
+    }

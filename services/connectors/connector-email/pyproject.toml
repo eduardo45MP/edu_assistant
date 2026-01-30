@@ -1,0 +1,17 @@
+# Project: edu_assistant
+# Component: connector-email package manifest
+# Responsibility:
+#   Placeholder for dependencies and metadata of the email connector.
+#
+# Architectural Notes:
+#   - Connectors access external data and normalize it for the system.
+#   - This file does not define provider logic or access policies.
+#
+# Related Documentation:
+#   - docs/*/architecture.md
+#   - docs/*/vision.md
+#   - AGENTS.md
+#
+# Important Constraints:
+#   - Keep dependencies minimal and service-scoped.
+#   - Do not encode provider credentials here.
